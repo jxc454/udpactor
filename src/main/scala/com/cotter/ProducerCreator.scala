@@ -4,8 +4,10 @@ import com.typesafe.config.Config
 import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import com.cotter.io.models.SimpleMessages.SimpleInt
 import java.util.Properties
+import org.apache.logging.log4j.scala.Logging
+import org.apache.logging.log4j.Level
 
-class ProducerCreator {
+class ProducerCreator extends Logging {
   val props = new Properties()
   props.put("bootstrap.servers", "localhost:9092")
   props.put("client.id", "producer")
@@ -16,6 +18,9 @@ class ProducerCreator {
 
   def produce(key: String, pb: SimpleInt): Unit = {
     val data = new ProducerRecord("protobuf", key, pb)
+
+    logger.debug("sending to kafka: " + data.toString)
+
     producer.send(data)
   }
 }

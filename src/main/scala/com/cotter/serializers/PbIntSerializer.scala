@@ -1,5 +1,8 @@
 package com.cotter.serializers
 
+import org.apache.logging.log4j.scala.Logging
+import org.apache.logging.log4j.Level
+
 import java.util
 
 import com.cotter.io.models.SimpleMessages.SimpleInt
