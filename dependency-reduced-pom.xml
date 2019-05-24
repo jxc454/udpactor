@@ -60,7 +60,6 @@
           <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
           <junitxml>.</junitxml>
           <filereports>TestSuiteReport.txt</filereports>
-          <jUnitClasses>samples.AppTest</jUnitClasses>
         </configuration>
       </plugin>
       <plugin>
