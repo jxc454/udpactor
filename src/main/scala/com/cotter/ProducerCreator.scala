@@ -1,11 +1,10 @@
 package com.cotter
 
-import com.typesafe.config.Config
-import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
-import com.cotter.io.models.SimpleMessages.SimpleInt
 import java.util.Properties
+
+import com.cotter.io.models.SimpleMessages.SimpleInt
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.logging.log4j.scala.Logging
-import org.apache.logging.log4j.Level
 
 class ProducerCreator extends Logging {
   val props = new Properties()
