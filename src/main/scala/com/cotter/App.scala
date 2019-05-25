@@ -33,9 +33,9 @@ object App extends Logging {
     }
 
     val builder: StreamsBuilder = new StreamsBuilder()
-    val numbers: KStream[String, Int] = builder.stream[String, Int]("incoming")
-    val pbNumbers: KStream[String, SimpleInt] = numbers.map((k: String, v: Int) => (k, intToProtobuf(v)))
-    pbNumbers.to("protobuf")
+    val numbers: KStream[String, String] = builder.stream[String, String](config.getString("incomingTopic"))
+    val pbNumbers: KStream[String, SimpleInt] = numbers.map((k: String, v: String) => (k, intToProtobuf(v.toInt)))
+    pbNumbers.to(config.getString("outputTopic"))
 
     val streams: KafkaStreams = new KafkaStreams(builder.build(), settings)
     streams.start()
