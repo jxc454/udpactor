@@ -1,14 +1,13 @@
-package com.cotter
+package com.jxc454.udpactor
 
-import com.typesafe.config.Config
-import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, ConsumerRecords, KafkaConsumer}
-import com.cotter.io.models.SimpleMessages.{SimpleInt, SimpleString}
-import org.apache.logging.log4j.scala.Logging
-import org.apache.logging.log4j.Level
-import scala.collection.JavaConverters._
-import java.util.Properties
 import java.time.Duration
-import java.util.UUID
+import java.util.{Properties, UUID}
+
+import com.cotter.io.models.SimpleMessages.SimpleInt
+import org.apache.kafka.clients.consumer.{ConsumerConfig, ConsumerRecord, ConsumerRecords, KafkaConsumer}
+import org.apache.logging.log4j.scala.Logging
+
+import scala.collection.JavaConverters._
 
 object ConsumerCreator extends Logging {
   def run(converter: Int => SimpleInt, producer: ProducerCreator): Unit = {

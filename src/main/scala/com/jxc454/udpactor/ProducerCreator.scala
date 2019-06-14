@@ -1,4 +1,4 @@
-package com.cotter
+package com.jxc454.udpactor
 
 import java.util.Properties
 

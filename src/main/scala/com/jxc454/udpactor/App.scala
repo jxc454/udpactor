@@ -1,11 +1,11 @@
-package com.cotter
+package com.jxc454.udpactor
 
 import java.util.Properties
 import java.util.concurrent.TimeUnit
 
 import com.typesafe.config.{Config, ConfigFactory}
 import com.cotter.io.models.SimpleMessages.{SimpleInt, SimpleString}
-import com.cotter.serializers.{PbIntDeserializer, PbIntSerializer}
+import com.jxc454.udpactor.serializers.{PbIntDeserializer, PbIntSerializer}
 import org.apache.kafka.common.serialization.{Serde, Serdes}
 import org.apache.kafka.streams.{KafkaStreams, StreamsConfig}
 import org.apache.kafka.streams.scala.StreamsBuilder

@@ -9,8 +9,8 @@
   <inceptionYear>2018</inceptionYear>
   <licenses>
     <license>
-      <name>My License</name>
-      <url>http://www.github.com</url>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -45,9 +45,16 @@
         </configuration>
       </plugin>
       <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.7</version>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.scalatest</groupId>
         <artifactId>scalatest-maven-plugin</artifactId>
-        <version>2.0.0</version>
+        <version>1.0</version>
         <executions>
           <execution>
             <id>test</id>
@@ -56,11 +63,6 @@
             </goals>
           </execution>
         </executions>
-        <configuration>
-          <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
-          <junitxml>.</junitxml>
-          <filereports>TestSuiteReport.txt</filereports>
-        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
@@ -85,21 +87,9 @@
   </build>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>hamcrest-core</artifactId>
-          <groupId>org.hamcrest</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>org.scalatest</groupId>
       <artifactId>scalatest_2.12</artifactId>
-      <version>3.0.5</version>
+      <version>3.2.0-SNAP9</version>
       <scope>test</scope>
       <exclusions>
         <exclusion>
@@ -110,41 +100,16 @@
           <artifactId>scala-xml_2.12</artifactId>
           <groupId>org.scala-lang.modules</groupId>
         </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-core_2.12</artifactId>
-      <version>4.2.0</version>
-      <scope>test</scope>
-      <exclusions>
         <exclusion>
-          <artifactId>specs2-matcher_2.12</artifactId>
-          <groupId>org.specs2</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>test-interface</artifactId>
-          <groupId>org.scala-sbt</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>org.specs2</groupId>
-      <artifactId>specs2-junit_2.12</artifactId>
-      <version>4.2.0</version>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>test-interface</artifactId>
-          <groupId>org.scala-sbt</groupId>
+          <artifactId>scala-parser-combinators_2.12</artifactId>
+          <groupId>org.scala-lang.modules</groupId>
         </exclusion>
       </exclusions>
     </dependency>
   </dependencies>
   <properties>
     <scala.compat.version>2.12</scala.compat.version>
-    <scala.version>2.12.6</scala.version>
-    <spec2.version>4.2.0</spec2.version>
+    <scala.version>2.12.8</scala.version>
     <encoding>UTF-8</encoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
