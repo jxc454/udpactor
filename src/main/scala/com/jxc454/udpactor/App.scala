@@ -1,8 +1,9 @@
 package com.jxc454.udpactor
 
 import java.util.Properties
+import java.util.UUID
 
-import com.cotter.io.models.SimpleMessages.{SimpleInt, SimpleString}
+import com.jxc454.models.SimpleMessages.{SimpleInt, SimpleString}
 import com.jxc454.udpactor.serializers.{PbIntDeserializer, PbIntSerializer, PbStringDeserializer, PbStringSerializer}
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.kafka.common.serialization.{Serde, Serdes}
@@ -39,7 +40,10 @@ object App extends Logging {
     val numbers: KStream[String, java.lang.Integer] = builder.stream[String, java.lang.Integer](config.getString("inputTopic"))
 
     // define output KStream
-    val pbNumbers: KStream[String, SimpleInt] = numbers.map((k: String, v: Integer) => (k, intToProtobuf(v.toInt)))
+    val pbNumbers: KStream[String, SimpleInt] = numbers.map((k: String, v: Integer) => {
+      logger.info(s"udp-actor got a number: $v")
+      (UUID.randomUUID.toString, intToProtobuf(v.toInt))
+    })
 
     // define output KStream destination
     pbNumbers.to(config.getString("outputTopic"))

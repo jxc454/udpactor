@@ -64,7 +64,7 @@
       <version>2.2.0</version>
     </dependency>
     <dependency>
-      <groupId>com.cotter.io</groupId>
+      <groupId>com.jxc454</groupId>
       <artifactId>models</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>

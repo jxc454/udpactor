@@ -2,7 +2,7 @@ package com.jxc454.udpactor.serializers
 
 import java.util
 
-import com.cotter.io.models.SimpleMessages.SimpleString
+import com.jxc454.models.SimpleMessages.SimpleString
 import org.apache.kafka.common.serialization.{Deserializer, Serializer}
 
 class PbStringSerializer extends Serializer[SimpleString] {
