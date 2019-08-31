@@ -64,9 +64,9 @@
       <version>2.2.0</version>
     </dependency>
     <dependency>
-      <groupId>com.jxc454</groupId>
-      <artifactId>models</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <groupId>com.github.jxc454</groupId>
+      <artifactId>udpmodels</artifactId>
+      <version>1.0.0</version>
     </dependency>
 
     <!-- Test -->

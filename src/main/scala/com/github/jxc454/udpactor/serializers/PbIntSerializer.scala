@@ -1,8 +1,8 @@
-package com.jxc454.udpactor.serializers
+package com.github.jxc454.udpactor.serializers
 
 import java.util
 
-import com.jxc454.models.SimpleMessages.SimpleInt
+import com.github.jxc454.models.SimpleMessages.SimpleInt
 import org.apache.kafka.common.serialization.{Deserializer, Serializer}
 
 class PbIntSerializer extends Serializer[SimpleInt] {

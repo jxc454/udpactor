@@ -1,10 +1,10 @@
-package com.jxc454.udpactor
+package com.github.jxc454.udpactor
 
 import java.util.Properties
 import java.util.UUID
 
-import com.jxc454.models.SimpleMessages.{SimpleInt, SimpleString}
-import com.jxc454.udpactor.serializers.{PbIntDeserializer, PbIntSerializer, PbStringDeserializer, PbStringSerializer}
+import com.github.jxc454.models.SimpleMessages.{SimpleInt, SimpleString}
+import com.github.jxc454.udpactor.serializers.{PbIntDeserializer, PbIntSerializer, PbStringDeserializer, PbStringSerializer}
 import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.kafka.common.serialization.{Serde, Serdes}
 import org.apache.kafka.streams.scala.StreamsBuilder
